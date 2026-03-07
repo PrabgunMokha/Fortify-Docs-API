@@ -1,0 +1,8 @@
+fastapi==0.115.0
+uvicorn==0.30.6
+python-multipart==0.0.9
+pikepdf>=10.0.0
+Pillow==10.4.0
+cryptography==43.0.1
+streamlit==1.38.0
+requests==2.32.3
