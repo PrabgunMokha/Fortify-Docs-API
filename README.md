@@ -64,13 +64,3 @@ Use the interactive docs to inspect error responses when experimenting; the comm
 - `encryption.py`: AES-256-CBC helpers with PBKDF2-HMAC-SHA256 key derivation and the custom `ENCFILE1` format.
 - `requirements.txt`: API, UI, image, PDF, and cryptography dependencies.
 
-## Current behavior and limitations
-
-- Images are always converted into protected PDFs by the protect route. Although `convert_to_pdf` is accepted, it does not change this behavior.
-- The AES helper can create `.enc` bytes in Python, but the current protect route does not expose that operation. The unlock route supports compatible encrypted files.
-- PDF permission flags depend on reader enforcement and should not be presented as guaranteed copy prevention.
-- The custom AES-CBC format does not include an authentication tag; it does not provide authenticated encryption.
-- Requests read complete uploads into memory. The application currently defines no explicit upload-size limit or account authentication and uses permissive CORS settings.
-- The Streamlit interface points to a fixed local API URL. Change `API_BASE` in `app.py` if the backend runs elsewhere.
-
-This repository implements document processing and encryption, rather than RAG or natural-language processing.
